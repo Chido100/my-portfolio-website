@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="bg-dark p-5 p-lg-0 text-center text-dark text-sm-start">
+    <div class="container">
+        <div class="row d-sm-flex align-items-center justify-content-between">
+            {% for item in items %}
+                <div class="col-md-4 mx-auto">
+                    <div class="media"> 
+                        <img src="{{ item.image.url }}" class="rounded-circle account-img" style="width:400px; height:400px;" alt="Profile Picture"> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h2 class="card-title text-center display-2">{{ item.name }}</h2>
+                            <h5 class="card-text text-center display-5">{{ item.job_title }}</h5>
+                            
+                        </div>
+                        <div class="card-body">  
+                            <div>
+                                {{ item.intro }}
+                            </div>
+                        </div>
+                        <div>
+                            <a href="https://www.linkedin.com/in/chidozieamefule/"><img src="media/logo/linkedin.png" class="img-thumbnail" style="width:50px; height:50px;"></a>
+                            <a href="https://github.com/Chido100"><img src="media/logo/github.png" class="img-thumbnail" style="width:50px; height:50px;"></a>
+                            <br><button class="btn btn-warning">Download CV</button>
+                        </div>
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
