@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="display-4 text-center mb-4">Tech Stack</h2>
+        
+            {% for skill in skills %}
+              <div class="card mb-6 border-0">
+                <img src="{{ skill.skill_image.url }}" class="card-img-top" style="width:40px; height:40px;" alt="{{ skill.skill_name }}">
+                <div class="card-body">
+                  <h3 class="card-title">{{ skill.skill_name }}</h3>
+                </div>
+              </div>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+{% endblock content %}
