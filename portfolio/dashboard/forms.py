@@ -6,4 +6,4 @@ from .models import ContactMe
 class ContactMeForm(forms.ModelForm):
     class Meta:
         model = ContactMe
-        fields = ['subject', 'message']
+        fields = ['first_name', 'last_name', 'email', 'subject', 'message']

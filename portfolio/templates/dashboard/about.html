@@ -1,14 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="row">
-        <div class="col-lg-8 mx-auto text-center text-lg-left">
-            <h2 class="display-4 text-center mb-4">About Me</h2>
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h2.card-title {
+        font-weight: bold;
+    }
+</style>
+
+<div class="container mt-5" style="background-image: url('media/common_image/portfolio_background.png'); background-size: cover; background-position: center;">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="display-4 text-center mb-4 text-warning">About Me</h2>
             {% for item in items %}
-            <p class="text-left">{{ item.summary }}</p>
+            <p class="text-white">{{ item.summary }}</p>
             {% endfor %}
         </div>
-        </div>
     </div>
+</div>
+
 {% endblock content %}
+
+
+
+
+

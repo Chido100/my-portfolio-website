@@ -50,8 +50,11 @@ class About(models.Model):
 
 
 class ContactMe(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     subject = models.CharField(max_length=255)
     message = models.TextField()
+    email = models.EmailField()
 
     class Meta:
         verbose_name_plural = 'Contact Me'
