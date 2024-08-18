@@ -30,10 +30,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'dashboard',
+    'blog',
     
 
     'crispy_forms',
     'crispy_bootstrap5',
+    'taggit',
 ]
 
 MIDDLEWARE = [

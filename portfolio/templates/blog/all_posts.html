@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h2.card-title {
+        font-weight: bold;
+    }
+
+    .card {
+        height: 250px;
+        background-color: black;
+        color: white;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .card-text {
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        /*-webkit-line-clamp: 3; /* Limits text to 3 lines */
+        -webkit-box-orient: vertical;
+    }
+    .card img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .btn-sm {
+        width: auto;
+        white-space: nowrap;
+        font-size: 0.8rem; /* Reduce font size */
+        padding: 0.25rem 0.5rem; /* Reduce padding */
+    }
+</style>
+
+<div class="container mt-5" style="background-image: url('media/common_image/portfolio_background.png'); background-size: cover; background-position: center;">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <h2 class="display-4 text-center mb-4 text-warning">Blog</h2>
+            {% for post in posts %}
+            <div class="card mb-3 mx-auto" style="max-width: 740px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ post.image.url }}" class="img-fluid rounded-start" alt="{{ post.title }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>{{ post.title }}</strong></h5>
+                            <p class="card-text text-white">{{ post.blog_intro|truncatewords:20 }}</p>
+                            <a href="{% url 'post-details' post.pk %}" class="btn btn-dark btn-sm mt-4" style="width: auto; white-space: nowrap;">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
