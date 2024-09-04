@@ -33,7 +33,14 @@ class Project(models.Model):
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to='project_images', default='')
     description = RichTextField()
-    tech_stack = models.CharField(max_length=255)
+    category = models.CharField(max_length=100, default='Personal Project')
+    role = models.CharField(max_length=100, default='Tech Lead')
+    team_size = models.IntegerField(default=1)
+    duration = models.CharField(max_length=100, default='1')
+    year = models.IntegerField(default=2024)
+    github_url = models.URLField(default='')
+    live_url = models.URLField(default='')
+
 
     def __str__(self):
         return self.title

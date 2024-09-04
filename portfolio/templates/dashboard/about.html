@@ -18,7 +18,7 @@
         <div class="col-lg-8 mx-auto">
             <h2 class="display-4 text-center mb-4 text-warning">About Me</h2>
             {% for item in items %}
-            <p class="text-white">{{ item.summary }}</p>
+            <p class="text-white">{{ item.summary|safe }}</p>
             {% endfor %}
         </div>
     </div>
