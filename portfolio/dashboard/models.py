@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 import PIL
 
 
@@ -7,7 +8,7 @@ class Dashboard(models.Model):
     name = models.CharField(max_length=100)
     job_title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='profile_image')
-    intro = models.TextField(default='Hi there...')
+    intro = RichTextField(default='Hi there...')
 
     class Meta:
         verbose_name_plural = 'Dashboard'
@@ -31,7 +32,7 @@ class Skills(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to='project_images', default='')
-    description = models.TextField()
+    description = RichTextField()
     tech_stack = models.CharField(max_length=255)
 
     def __str__(self):
@@ -39,7 +40,7 @@ class Project(models.Model):
 
 
 class About(models.Model):
-    summary = models.TextField()
+    summary = RichTextField()
 
     class Meta:
         verbose_name_plural = 'About'
