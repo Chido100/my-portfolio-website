@@ -13,9 +13,25 @@
   }
 
   .card {
-        background-color: black;
-        color: white;
-    }
+      background-color: black;
+      color: white;
+      border: none; /* Remove the border */
+      border-radius: 0; /* Optional: removes rounded corners if any */
+      margin-bottom: 20px; /* Space between cards */
+      padding-bottom: 20px; /* Space for the border */
+  }
+
+  .card-img-top {
+      border-radius: 0; /* Optional: removes rounded corners from the image */
+  }
+
+  .card-body {
+      border: none; /* Ensure no border inside the card body */
+  }
+
+  .card:not(:last-child) {
+      border-bottom: 1px solid white; /* Adds a line below each card except the last one */
+  }
 </style>
 
   <div class="container mt-5">
